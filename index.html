@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ying Wu — AI Engineer</title>
+<style>
+:root { color-scheme: light; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #1a1a2e;
+  background: #f8f9fc;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  padding: 60px 24px 50px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.6em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.hero .headline {
+  font-size: 1.15em;
+  color: #a8c4e0;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.hero .contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 0.92em;
+}
+.hero .contact-links a {
+  color: #7ec8e3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hero .contact-links a:hover { color: #fff; }
+.hero .contact-links span { color: #5a7a9a; }
+
+/* CONTAINER */
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* SECTIONS */
+section {
+  padding: 40px 0 10px;
+}
+section h2 {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #0f3460;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-bottom: 2px solid #2e75b6;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+/* ABOUT */
+.about p {
+  font-size: 1.02em;
+  color: #2c2c54;
+  line-height: 1.75;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+.skill-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px 18px;
+  border-left: 3px solid #2e75b6;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.skill-card h3 {
+  font-size: 0.88em;
+  font-weight: 700;
+  color: #0f3460;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.skill-card p {
+  font-size: 0.88em;
+  color: #444;
+  line-height: 1.55;
+}
+
+/* PROJECTS */
+.project {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.project:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.1); }
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.project h3 {
+  font-size: 1.02em;
+  color: #1a1a2e;
+  font-weight: 600;
+}
+.project .date {
+  font-size: 0.85em;
+  color: #888;
+  white-space: nowrap;
+}
+.project p {
+  font-size: 0.92em;
+  color: #444;
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+.project .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.project .tag {
+  background: #e8f0fe;
+  color: #1a56db;
+  font-size: 0.76em;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.project .github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85em;
+  color: #2e75b6;
+  text-decoration: none;
+  font-weight: 500;
+}
+.project .github-link:hover { text-decoration: underline; }
+.gh-icon {
+  width: 16px; height: 16px;
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232e75b6'%3E%3Cpath d='M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* EXPERIENCE */
+.exp-item {
+  margin-bottom: 22px;
+  padding-left: 16px;
+  border-left: 2px solid #d0d8e8;
+}
+.exp-item .exp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.exp-item h3 {
+  font-size: 1em;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+.exp-item .exp-date {
+  font-size: 0.85em;
+  color: #888;
+}
+.exp-item .exp-title {
+  font-size: 0.92em;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+.exp-item ul {
+  list-style: none;
+  padding: 0;
+}
+.exp-item li {
+  font-size: 0.9em;
+  color: #444;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 4px;
+  line-height: 1.55;
+}
+.exp-item li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2e75b6;
+  font-weight: bold;
+}
+
+/* EDUCATION */
+.edu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.edu-item h3 {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+.edu-item .edu-detail {
+  font-size: 0.88em;
+  color: #666;
+}
+
+/* CERTS */
+.cert-list {
+  list-style: none;
+  padding: 0;
+}
+.cert-list li {
+  font-size: 0.92em;
+  color: #444;
+  padding: 6px 0;
+  padding-left: 14px;
+  position: relative;
+}
+.cert-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2e75b6;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 24px;
+  color: #999;
+  font-size: 0.82em;
+  border-top: 1px solid #e4e8f0;
+  margin-top: 30px;
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>YING WU</h1>
+  <div class="headline">AI Engineer &nbsp;|&nbsp; Agentic Systems · LLM Infrastructure · Evaluation & Safety</div>
+  <div class="contact-links">
+    <a href="mailto:jiangsuchancheng@hotmail.com">jiangsuchancheng@hotmail.com</a>
+    <span>|</span>
+    <a href="https://linkedin.com/in/yingwuwin" target="_blank">LinkedIn</a>
+    <span>|</span>
+    <a href="https://github.com/Crazywy1990" target="_blank">GitHub</a>
+    <span>|</span>
+    <span style="color:#a8c4e0">Bellevue, WA</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ABOUT -->
+<section class="about">
+  <h2>About</h2>
+  <p>AI Engineer who builds production agentic systems with safety and auditability as first-class constraints. Designed and shipped multi-agent pipelines with structured tool use, retrieval-augmented context, persistent memory, and human-in-the-loop planning. Built production LLM infrastructure including multi-provider inference gateways with real-time routing, load balancing, and automatic failover. Hands-on experience training large-scale models (LLaMA 3 8B via RLHF/PPO on 8×A100 GPUs with DeepSpeed), building evaluation frameworks, and operating automated eval harnesses. Strong Python engineer with 10+ years shipping in high-stakes environments. MS Data Science from Georgia Tech (3.91 GPA).</p>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Agentic Systems</h3>
+      <p>Multi-agent orchestration, sub-agent routing, dynamic tool selection, RAG, persistent memory, Tree-of-Thought, human-in-the-loop gates</p>
+    </div>
+    <div class="skill-card">
+      <h3>LLM Infrastructure</h3>
+      <p>Multi-provider inference gateway, prompt engineering (CoT, ReACT), model serving, streaming, failover, embedding pipelines</p>
+    </div>
+    <div class="skill-card">
+      <h3>Evaluation & Safety</h3>
+      <p>Automated eval harnesses, grounding verification, hallucination detection, structural safety guardrails, audit trail design, WandB tracking</p>
+    </div>
+    <div class="skill-card">
+      <h3>Vector DBs & Retrieval</h3>
+      <p>ChromaDB, sentence embeddings (MiniLM), TF-IDF fallback, semantic dedup, similarity scoring</p>
+    </div>
+    <div class="skill-card">
+      <h3>Model Training</h3>
+      <p>PyTorch, RLHF/PPO, SFT, LoRA/QLoRA, reward modeling, DeepSpeed, HuggingFace (LLaMA 3, BERT, T5, FLAN-T5)</p>
+    </div>
+    <div class="skill-card">
+      <h3>Production & Cloud</h3>
+      <p>FastAPI, Docker, CI/CD, AWS SageMaker, GCP, Azure ML, Databricks, OpenAI API, Anthropic API</p>
+    </div>
+    <div class="skill-card">
+      <h3>Data Science & ML</h3>
+      <p>Scikit-learn, TensorFlow, XGBoost, LightGCN, time series, feature engineering, graph neural networks</p>
+    </div>
+    <div class="skill-card">
+      <h3>Languages</h3>
+      <p>Python (expert), R, SQL, JavaScript, Java, C++, C#/.NET</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <h2>Selected Projects</h2>
+
+  <div class="project">
+    <div class="project-head">
+      <h3>JobPilot — Human-in-the-Loop Job Application Agent</h3>
+      <span class="date">2026</span>
+    </div>
+    <p>Multi-agent pipeline (Searcher → Matcher → Writer → Verifier → Reviewer) in ~3,600 lines of Python with no agent framework. Implements tool use, retrieval-augmented context (ChromaDB + sentence embeddings), persistent SQLite memory, Tree-of-Thought planning, and structural safety guardrails. Every output claim is grounded against source evidence; ungrounded drafts are pruned automatically. Full audit trail with pruned-branch visibility.</p>
+    <div class="tags">
+      <span class="tag">Multi-Agent</span>
+      <span class="tag">RAG</span>
+      <span class="tag">ChromaDB</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">SQLite</span>
+      <span class="tag">Safety</span>
+    </div>
+    <a class="github-link" href="https://github.com/Crazywy1990/jobpilot" target="_blank"><span class="gh-icon"></span> View on GitHub</a>
+  </div>
+
+  <div class="project">
+    <div class="project-head">
+      <h3>RLHF Pipeline for Fine-Tuning LLaMA 3 (8B)</h3>
+      <span class="date">Sep 2024 – May 2025</span>
+    </div>
+    <p>Full RLHF pipeline with PyTorch and HuggingFace to fine-tune Meta LLaMA 3 (8B) on 8×A100 GPUs. Distributed SFT with DeepSpeed, reward model with LoRA on HH-RLHF dataset, PPO with adaptive KL divergence control. GPT-based automated evaluation framework with WandB experiment tracking.</p>
+    <div class="tags">
+      <span class="tag">RLHF</span>
+      <span class="tag">PPO</span>
+      <span class="tag">DeepSpeed</span>
+      <span class="tag">LoRA</span>
+      <span class="tag">PyTorch</span>
+      <span class="tag">WandB</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-head">
+      <h3>LLM Inference Gateway</h3>
+      <span class="date">2023 – Present</span>
+    </div>
+    <p>Multi-provider LLM backend with real-time provider routing, load balancing, streaming response handling, embedding-based similarity matching, retrieval pipelines, and automatic failover. Optimized for latency and throughput across OpenAI, Anthropic, and OpenRouter APIs.</p>
+    <div class="tags">
+      <span class="tag">LLM Infra</span>
+      <span class="tag">Load Balancing</span>
+      <span class="tag">Streaming</span>
+      <span class="tag">Failover</span>
+      <span class="tag">FastAPI</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-head">
+      <h3>FFM Agent — Multi-Agent LLM Orchestration</h3>
+      <span class="date">2024</span>
+    </div>
+    <p>Multi-agent orchestration system with sub-agent routing, dynamic tool selection, context management, and reward-based optimization. Built monitoring and quality metrics for agent performance evaluation.</p>
+    <div class="tags">
+      <span class="tag">Multi-Agent</span>
+      <span class="tag">Orchestration</span>
+      <span class="tag">Tool Use</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-head">
+      <h3>FEMA Flood Map Agent</h3>
+      <span class="date">Dec 2025 – Jan 2026</span>
+    </div>
+    <p>Multi-agent geospatial system with LLM-powered frontend agent and backend agent connected via A2A protocol. Dynamic tool selection for location parsing and FEMA floodplain map retrieval.</p>
+    <div class="tags">
+      <span class="tag">A2A Protocol</span>
+      <span class="tag">Geospatial</span>
+      <span class="tag">Multi-Agent</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-head">
+      <h3>Recommendation System — LightGCN Embeddings</h3>
+      <span class="date">Sep 2022 – Dec 2023</span>
+    </div>
+    <p>Embedding-based recommendation with LightGCN (graph neural network) in PyTorch: user/item embeddings, sparse graph construction, multi-layer message passing, embedding propagation, and scalable batch prediction.</p>
+    <div class="tags">
+      <span class="tag">GNN</span>
+      <span class="tag">Embeddings</span>
+      <span class="tag">PyTorch</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-head">
+      <h3>Fine-tuning FLAN-T5 · BERT Sentiment · LSTM Forecasting</h3>
+      <span class="date">2024 – 2025</span>
+    </div>
+    <p>Fine-tuned FLAN-T5-small with Seq2SeqTrainer and ROUGE metrics. BERT for binary sentiment classification. LSTM for time series stock forecasting. End-to-end PyTorch pipelines with custom evaluation.</p>
+    <div class="tags">
+      <span class="tag">FLAN-T5</span>
+      <span class="tag">BERT</span>
+      <span class="tag">LSTM</span>
+      <span class="tag">Fine-tuning</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-head">
+      <h3>Audio Signal Analysis · Topic Modeling · Sales Prediction</h3>
+      <span class="date">2021 – 2022</span>
+    </div>
+    <p>Wavelet-based audio denoising with SNR evaluation (SageMaker). Hierarchical LDA topic modeling on Twitter data with D3.js visualization. XGBoost forecasting across 1,000+ stores with feature engineering.</p>
+    <div class="tags">
+      <span class="tag">Signal Processing</span>
+      <span class="tag">NLP</span>
+      <span class="tag">XGBoost</span>
+      <span class="tag">SageMaker</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+  <h2>Experience</h2>
+
+  <div class="exp-item">
+    <div class="exp-head">
+      <h3>Outlier AI</h3>
+      <span class="exp-date">May 2025 – Present</span>
+    </div>
+    <div class="exp-title">AI Engineer — LLM Evaluation (Part-time)</div>
+    <ul>
+      <li>Evaluate frontier LLM outputs (GPT-4, Claude, Gemini-class) across applied mathematics, ML/AI, and scientific domains</li>
+      <li>Author PhD-level prompts and Ground Truth reference solutions; annotate model failure modes (hallucination, logical errors, numerical reasoning) for RLHF pipelines</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-head">
+      <h3>Independent AI / ML Engineer</h3>
+      <span class="exp-date">Mar 2022 – Present</span>
+    </div>
+    <div class="exp-title">Self-employed</div>
+    <ul>
+      <li>Design and ship end-to-end AI systems — agentic pipelines, LLM infrastructure, model training, evaluation, and deployment</li>
+      <li>Built JobPilot, LLM Inference Gateway, FFM Agent, and 3D/workflow automation tools</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-head">
+      <h3>AECOM</h3>
+      <span class="exp-date">Mar 2020 – Present (5+ years)</span>
+    </div>
+    <div class="exp-title">Certified Project Manager / Transportation Manager, PE</div>
+    <ul>
+      <li>Ship complex, multi-million-dollar infrastructure projects with teams of 10-20+ engineers in safety-critical, auditable environments</li>
+      <li>Set technical direction on 30+ projects; built data-driven analytics and automated reporting pipelines</li>
+      <li>Developed 3D/workflow automation tools using Bentley OpenRoads SDK and Autodesk Civil 3D API</li>
+    </ul>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-head">
+      <h3>Bentley Architects + Engineers · BCC Engineering</h3>
+      <span class="exp-date">Jun 2015 – Mar 2020</span>
+    </div>
+    <div class="exp-title">Civil / Roadway Engineer · Project Engineer</div>
+    <ul>
+      <li>Designed infrastructure across 20+ projects; processed large geospatial datasets (LiDAR, GIS) for spatial analysis</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section>
+  <h2>Education</h2>
+  <div class="edu-item">
+    <h3>MS Analytics (Data Science) — Georgia Institute of Technology</h3>
+    <span class="edu-detail">2021 &nbsp;|&nbsp; GPA: 3.91/4.00</span>
+  </div>
+  <div class="edu-item">
+    <h3>MS Ocean Engineering — University of Florida</h3>
+    <span class="edu-detail">2015 &nbsp;|&nbsp; GPA: 3.80/4.00</span>
+  </div>
+  <div class="edu-item">
+    <h3>BS Civil Engineering — Tianjin Chengjian University</h3>
+    <span class="edu-detail">2013</span>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section>
+  <h2>Certifications</h2>
+  <ul class="cert-list">
+    <li>Agentic AI Program: Building Autonomous Systems for Real-World Applications — CMU School of Computer Science, 2026</li>
+    <li>Microsoft Data Science Certificates</li>
+    <li>5-Day AI Agents Intensive Course with Google — Kaggle, 2025</li>
+    <li>Professional Engineer (PE) — Florida, #88563</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  Ying Wu &nbsp;·&nbsp; AI Engineer &nbsp;·&nbsp; Bellevue, WA
+</footer>
+
+</body>
+</html>
